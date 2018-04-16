@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--导入类-->
+<!--设置布局-->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<VBox prefHeight="600.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.wen.controller.IndexController">
+    <spacing>10</spacing>
+    <Pane prefWidth="800">
+        <HBox fx:id="operationGroup">
+            <Button alignment="CENTER" text="文件分割" prefHeight="50.0" prefWidth="100.0" fx:id="fileSplit"  onAction="#chooseOperationType" />
+            <Button alignment="CENTER"  text="数据抓取" prefHeight="50.0" prefWidth="100.0" fx:id="dataGrap" onAction="#chooseOperationType"  />
+            <Button alignment="CENTER" text="数据导入" prefHeight="50.0" prefWidth="100.0"  fx:id="dataImport" onAction="#chooseOperationType" />
+            <Button alignment="CENTER" text="数据导出" prefHeight="50.0" prefWidth="100.0"  fx:id="dataExport" onAction="#chooseOperationType" />
+            <Button alignment="CENTER" text="数据分析" prefHeight="50.0" prefWidth="100.0"  fx:id="dataAnalysis" onAction="#chooseOperationType" />
+        </HBox>
+    </Pane>
+    <Pane prefWidth="800">
+        <HBox fx:id="taskOperationGroup">
+            <Button alignment="CENTER" text="新建任务" prefHeight="30.0" prefWidth="70.0"  onAction="#chooseTaskOperationType" />
+            <Button alignment="CENTER"  text="运行任务" prefHeight="30.0" prefWidth="70.0"  onAction="#chooseTaskOperationType"  />
+            <Button alignment="CENTER" text="终止任务" prefHeight="30.0" prefWidth="70.0" onAction="#chooseTaskOperationType"  />
+        </HBox>
+    </Pane>
+    <Pane prefWidth="800">
+        <HBox>
+            <spacing>5</spacing>
+            <Pane prefWidth="100" prefHeight="500" style="-fx-background-color: green">
+
+            </Pane>
+            <Pane prefWidth="700" prefHeight="500" style="-fx-background-color: aqua">
+            </Pane>
+        </HBox>
+
+    </Pane>
+    <Pane prefWidth="800">
+        <TextField visible="false" fx:id="operation"  />
+        <Label text="#operation"></Label>
+    </Pane>
+
+</VBox>

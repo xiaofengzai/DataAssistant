@@ -1,0 +1,7 @@
+.SelectedButton{
+    -fx-base: green;
+}
+
+.UnSelectedButton{
+    -fx-base: grey;
+}
