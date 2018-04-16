@@ -7,8 +7,10 @@ import com.wen.common.EnumMessage;
  */
 public enum TaskTypeEnum implements EnumMessage<Integer> {
     CreateTask(1,"新建任务"),
-    ExcuteTask(2,"执行任务"),
-    TerminateTask(3,"终止任务");
+    EditTask(2,"编辑任务"),
+    ExcuteTask(3,"执行任务"),
+    TerminateTask(4,"终止任务"),
+    RemoveTask(5,"删除任务");
 
     TaskTypeEnum(Integer value, String displayName){
         this.value=value;
