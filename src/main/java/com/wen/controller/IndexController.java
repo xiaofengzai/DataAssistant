@@ -3,14 +3,19 @@ package com.wen.controller;
 import com.wen.Button.MyButton;
 import com.wen.Button.OperationChangeServer;
 import com.wen.OperationTypeEnum;
+import com.wen.StageTypeEnum;
 import com.wen.TaskTypeEnum;
+import com.wen.common.BusinessException;
 import com.wen.common.EnumUtils;
+import com.wen.common.StageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -62,11 +67,17 @@ public class IndexController {
 
     @FXML
     public void chooseTaskOperationType(ActionEvent event){
+        String operationCode=operation.getText();
+        if(StringUtils.isEmpty(operationCode))
+            throw new BusinessException("请选择业务模块");
         beforeClickTaskOperation();
         Button button=(Button) event.getSource();
         String buttonText=button.getText();
         TaskTypeEnum taskTypeEnum= EnumUtils.toEnum(buttonText,TaskTypeEnum.class);
         taskServer.notifyObserver(button,"");
+        OperationTypeEnum operationTypeEnum=EnumUtils.toEnum(Integer.valueOf(operationCode),OperationTypeEnum.class);
+        StageTypeEnum stageTypeEnum=StageTypeEnum.getStageTypeEnumByOperationAndTaskType(operationTypeEnum,taskTypeEnum);
+        new StageUtil().showStage(stageTypeEnum);
         //弹窗
     }
 
