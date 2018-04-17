@@ -1,6 +1,5 @@
 package com.wen.Button;
 
-import com.wen.common.EnumMessage;
 import javafx.scene.control.Button;
 
 /**

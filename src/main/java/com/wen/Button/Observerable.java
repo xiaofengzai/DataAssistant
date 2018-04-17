@@ -1,7 +1,5 @@
 package com.wen.Button;
 
-import com.wen.OperationTypeEnum;
-import com.wen.common.EnumMessage;
 import javafx.scene.control.Button;
 
 import java.util.Observer;
